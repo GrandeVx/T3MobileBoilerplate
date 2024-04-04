@@ -1,0 +1,28 @@
+{
+  "name": "@wardrobe/db",
+  "version": "0.1.0",
+  "module": "index.ts",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "with-env": "dotenv -e ../../.env --",
+    "postinstall": "pnpm prisma generate",
+    "dev": "tsc --watch",
+    "db-push": "pnpm with-env prisma db push",
+    "db-generate": "pnpm with-env prisma generate"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.11.0",
+    "prisma": "^5.1.1",
+    "zod": "^3.22.4",
+    "zod-prisma": "^0.5.4"
+  }
+}

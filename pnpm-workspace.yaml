@@ -1,0 +1,6 @@
+packages:
+  - apps/next.js
+  - apps/mobile
+  - packages/api
+  - packages/db
+  - packages/config/*

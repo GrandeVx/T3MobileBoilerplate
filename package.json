@@ -1,0 +1,25 @@
+{
+  "name": "wardrobe",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "dev:next": "",
+    "clear": "rimraf ./**/**/node_modules/ && rm -rf ./node_modules/",
+    "dev": "turbo dev --parallel"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "rimraf": "^5.0.5",
+    "turbo": "^1.13.0"
+  }
+}

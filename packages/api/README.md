@@ -1,15 +1,9 @@
-# @wardrobe/api
+## TRPC Packages
 
-To install dependencies:
+### Introduction
 
-```bash
-bun install
-```
+This package contains the API Integration (TRPC) with the following features:
+  - db
+  - Protected Routes (Supabase JWT)
 
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.0.31. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+with that you can use the typescript types and the functions to interact with the API in the frontend and backend in a type-safe way.

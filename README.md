@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This repository is a boilerplate for building mobile applications using Expo, Next.js, TRPC, and Supabase. It is a full-stack solution that includes authentication, authorization, and data fetching. It is designed to be a starting point for building mobile applications that require a backend. it's based on the [expo-supabase-starter](https://github.com/FlemingVincent/expo-supabase-starter/assets/80268905/884ed027-4e4c-4fac-abc2-1f4a5df958f2) repository and has been extended to include Next.js and TRPC. 
+This repository is a boilerplate for building mobile applications using Expo, Next.js, TRPC, and Supabase. It is a full-stack solution that includes authentication, authorization, and data fetching. It is designed to be a starting point for building mobile applications that require a backend. it's based on the [expo-supabase-starter](https://github.com/FlemingVincent/expo-supabase-starter) repository and has been extended to include Next.js and TRPC. 
 
 ## The direction
 

@@ -6,7 +6,6 @@ import { SafeAreaView } from "@/components/safe-area-view";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { H1, Muted } from "@/components/ui/typography";
-import { api } from "@/lib/api";
 export default function WelcomeScreen() {
 	const router = useRouter();
 

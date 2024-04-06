@@ -21,7 +21,7 @@ export const theme = {
 		ring: "hsl(240 5.9% 10%)",
 	},
 	dark: {
-		background: "hsl(240 10% 3.9%)",
+		background: "hsl(60 3% 9%)",
 		foreground: "hsl(0 0% 98%)",
 		card: "hsl(240 10% 3.9%)",
 		"card-foreground": "hsl(0 0% 98%)",

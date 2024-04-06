@@ -10,7 +10,6 @@ import { Form, FormField, FormInput } from "@/components/ui/form";
 import { Text } from "@/components/ui/text";
 import { H1, Muted } from "@/components/ui/typography";
 import { useSupabase } from "@/context/supabase-provider";
-import { api } from "@/lib/api";
 
 const formSchema = z.object({
 	email: z.string().email("Please enter a valid email address."),
@@ -35,26 +34,18 @@ export default function SignIn() {
 	async function onSubmit(data: z.infer<typeof formSchema>) {
 		try {
 			await signInWithPassword(data.email, data.password);
-
 			form.reset();
 		} catch (error: Error | any) {
 			console.log(error.message);
 		}
 	}
 
-	const { data, isLoading, isError } = api.post.protectedHello.useQuery({
-		text: "Madonna",
-	});
-
 	return (
 		<SafeAreaView className="flex-1 bg-background p-4">
-			<View className="flex-1">
-				<H1 className="self-start">Sign In</H1>
-				<Muted className="self-start">
-					{isLoading ? "Loading..." : isError ? "Error" : data?.greeting}
-				</Muted>
+			<View className="flex-1 mt-[25%]">
+				<H1 className="self-start">Login</H1>
 				<Muted className="self-start mb-5">
-					to continue to Expo Supabase Starter
+					to enjoy the full experience
 				</Muted>
 				<Form {...form}>
 					<View className="gap-4">
@@ -115,3 +106,4 @@ export default function SignIn() {
 		</SafeAreaView>
 	);
 }
+

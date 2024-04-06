@@ -12,7 +12,7 @@ export default function WelcomeScreen() {
 	return (
 		<SafeAreaView className="flex flex-1 bg-background p-4">
 			<View className="flex flex-1 items-center justify-center gap-y-4">
-				<H1 className="text-center">Welcome to Expo Supabase Starter</H1>
+				<H1 className="text-center">Welcome to T3 Boilerplate</H1>
 				<Muted className="text-center">
 					A comprehensive starter project for developing Expo applications with
 					Supabase as the backend.

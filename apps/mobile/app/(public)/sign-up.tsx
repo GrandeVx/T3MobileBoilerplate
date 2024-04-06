@@ -63,13 +63,13 @@ export default function SignUp() {
 
 	return (
 		<SafeAreaView className="flex-1 bg-background p-4">
-			<View className="flex-1">
+			<View className="flex-1 mt-[25%]">
 				<H1 className="self-start">Sign Up</H1>
 				<Muted className="self-start mb-5">
 					to continue to Expo Supabase Starter
 				</Muted>
 				<Form {...form}>
-					<View className="gap-4">
+					<View className="gap-6">
 						<FormField
 							control={form.control}
 							name="email"

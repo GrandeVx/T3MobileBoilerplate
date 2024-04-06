@@ -1,6 +1,7 @@
 import { Session, User } from "@supabase/supabase-js";
 import { SplashScreen, useRouter, useSegments } from "expo-router";
 import { createContext, useContext, useEffect, useState } from "react";
+import { decode } from 'base64-arraybuffer'
 
 import { supabase } from "@/config/supabase";
 
@@ -13,8 +14,9 @@ type SupabaseContextProps = {
   signUp: (email: string, password: string) => Promise<void>;
   signInWithPassword: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
-  uploadAvatar: (file: File, fileUUID: string) => Promise<string>;
+  uploadAvatar: (file: string) => Promise<string>;
 	downloadAvatar: (fileUUID: string) => Promise<Blob>;
+  getAvatarUrl: (fileUUID: string) => Promise<string>;
   uploadPostImage: (file: File, fileUUID: string) => Promise<string>;
 };
 
@@ -31,6 +33,7 @@ export const SupabaseContext = createContext<SupabaseContextProps>({
   signOut: async () => {},
   uploadAvatar: async () => "",
 	downloadAvatar: async () => new Blob(),
+  getAvatarUrl: async () => "",
   uploadPostImage: async () => "",
 });
 
@@ -78,10 +81,11 @@ export const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
    * @returns The uploaded data path.
    * @throws If there is an error during the upload process.
    */
-  const uploadAvatar = async (file: File, fileUUID: string) => {
+  const uploadAvatar = async (file: string) => {
     const { data, error } = await supabase.storage
       .from("avatars")
-      .upload("public/" + fileUUID, file, {
+      .upload(user?.id + "/" + "avatar", decode(file), {
+        contentType: "image/png",
         cacheControl: "3600",
         upsert: false,
       });
@@ -189,6 +193,7 @@ export const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
         signOut,
         uploadAvatar,
 				downloadAvatar,
+        getAvatarUrl,
         uploadPostImage
       }}
     >

@@ -57,6 +57,9 @@ importers:
       '@wardrobe/tailwind-config':
         specifier: '*'
         version: link:../../packages/config/tailwind
+      base64-arraybuffer:
+        specifier: ^1.0.2
+        version: 1.0.2
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -69,6 +72,12 @@ importers:
       expo-constants:
         specifier: ~15.4.5
         version: 15.4.5(expo@50.0.14)
+      expo-image:
+        specifier: ^1.10.6
+        version: 1.10.6(expo@50.0.14)
+      expo-image-picker:
+        specifier: ^14.7.1
+        version: 14.7.1(expo@50.0.14)
       expo-linking:
         specifier: ~6.2.2
         version: 6.2.2(expo@50.0.14)
@@ -4544,6 +4553,11 @@ packages:
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
+  /base64-arraybuffer@1.0.2:
+    resolution: {integrity: sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==}
+    engines: {node: '>= 0.6.0'}
+    dev: false
+
   /base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: false
@@ -6082,6 +6096,32 @@ packages:
     dependencies:
       expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
       fontfaceobserver: 2.3.0
+    dev: false
+
+  /expo-image-loader@4.6.0(expo@50.0.14):
+    resolution: {integrity: sha512-RHQTDak7/KyhWUxikn2yNzXL7i2cs16cMp6gEAgkHOjVhoCJQoOJ0Ljrt4cKQ3IowxgCuOrAgSUzGkqs7omj8Q==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+    dev: false
+
+  /expo-image-picker@14.7.1(expo@50.0.14):
+    resolution: {integrity: sha512-ILQVOJgI3aEzrDmCFGDPtpAepYkn8mot8G7vfQ51BfFdQbzL6N3Wm1fS/ofdWlAZJl/qT2DwaIh5xYmf3SyGZA==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
+      expo-image-loader: 4.6.0(expo@50.0.14)
+    dev: false
+
+  /expo-image@1.10.6(expo@50.0.14):
+    resolution: {integrity: sha512-vcnAIym1eU8vQgV1re1E7rVQZStJimBa4aPDhjFfzMzbddAF7heJuagyewiUkTzbZUwYzPaZAie6VJPyWx9Ueg==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      '@react-native/assets-registry': 0.73.1
+      expo: 50.0.14(@babel/core@7.24.3)(@react-native/babel-preset@0.73.21)
     dev: false
 
   /expo-keep-awake@12.8.2(expo@50.0.14):

@@ -25,7 +25,7 @@ export default function TabOneScreen() {
 				variant="default"
 				size="default"
 				onPress={() => {
-					router.push("/modal");
+					router.push("/create-modal");
 				}}
 			>
 				<Text>Open Modal</Text>

@@ -20,7 +20,7 @@ export default function ProtectedLayout() {
 				tabBarShowLabel: false,
 			}}
 		>
-			<Tabs.Screen name="home" />
+			<Tabs.Screen name="(home)" />
 			<Tabs.Screen name="settings" />
 		</Tabs>
 	);

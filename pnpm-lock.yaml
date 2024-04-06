@@ -39,6 +39,9 @@ importers:
 
   apps/mobile:
     dependencies:
+      '@expo/vector-icons':
+        specifier: ^13.0.0
+        version: 13.0.0
       '@hookform/resolvers':
         specifier: ^3.1.1
         version: 3.3.4(react-hook-form@7.51.2)
@@ -2377,6 +2380,10 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       cross-spawn: 7.0.3
+    dev: false
+
+  /@expo/vector-icons@13.0.0:
+    resolution: {integrity: sha512-TI+l71+5aSKnShYclFa14Kum+hQMZ86b95SH6tQUG3qZEmLTarvWpKwqtTwQKqvlJSJrpFiSFu3eCuZokY6zWA==}
     dev: false
 
   /@expo/vector-icons@14.0.0:

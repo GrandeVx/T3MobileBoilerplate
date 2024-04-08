@@ -28,7 +28,7 @@ export default function TabOneScreen() {
 					router.push("/create-modal");
 				}}
 			>
-				<Text>Open Modal</Text>
+				<Text>Open Avatar Modal</Text>
 			</Button>
 		</View>
 	);

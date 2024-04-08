@@ -5,16 +5,25 @@ import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 import { useSupabase } from "@/context/supabase-provider";
 import * as ImagePicker from "expo-image-picker";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Modal() {
-  const { uploadAvatar } = useSupabase();
+  const { uploadAvatar, getAvatarUrl } = useSupabase();
 
   const [image, setImage] = useState<string>();
   const [base64, setBase64] = useState<string>();
   const [loaded, setLoaded] = useState<boolean>(false);
+
+  useEffect(() => {
+    (async () => {
+      const url = await getAvatarUrl();
+      if (url != "") {
+        setImage(url);
+      }
+    })();
+  }, []);
 
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
@@ -48,14 +57,14 @@ export default function Modal() {
       <View className="flex-1 justify-center">
         {(image && (
           <Pressable onPress={pickImage}>
-          <Image
-            source={{
-              uri: image,
-              width: 200,
-              height: 200,
-            }}
-            className="w-60 h-60 rounded-full"
-          />
+            <Image
+              source={{
+                uri: image,
+                width: 200,
+                height: 200,
+              }}
+              className="w-60 h-60 rounded-full"
+            />
           </Pressable>
         )) || (
           <Pressable

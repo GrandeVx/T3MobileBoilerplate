@@ -1,7 +1,7 @@
 import { Session, User } from "@supabase/supabase-js";
 import { SplashScreen, useRouter, useSegments } from "expo-router";
 import { createContext, useContext, useEffect, useState } from "react";
-import { decode } from 'base64-arraybuffer'
+import { decode } from "base64-arraybuffer";
 
 import { supabase } from "@/config/supabase";
 
@@ -15,8 +15,7 @@ type SupabaseContextProps = {
   signInWithPassword: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
   uploadAvatar: (file: string) => Promise<string>;
-	downloadAvatar: (fileUUID: string) => Promise<Blob>;
-  getAvatarUrl: (fileUUID: string) => Promise<string>;
+  getAvatarUrl: () => Promise<string>;
   uploadPostImage: (file: File, fileUUID: string) => Promise<string>;
 };
 
@@ -32,7 +31,6 @@ export const SupabaseContext = createContext<SupabaseContextProps>({
   signInWithPassword: async () => {},
   signOut: async () => {},
   uploadAvatar: async () => "",
-	downloadAvatar: async () => new Blob(),
   getAvatarUrl: async () => "",
   uploadPostImage: async () => "",
 });
@@ -97,7 +95,7 @@ export const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
 
   /**
    * Uploads a post image to Supabase storage.
-   * 
+   *
    * @param file - The file to be uploaded.
    * @param fileUUID - The UUID of the file.
    * @returns The path of the uploaded file.
@@ -106,7 +104,7 @@ export const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
   const uploadPostImage = async (file: File, fileUUID: string) => {
     const { data, error } = await supabase.storage
       .from("posts")
-      .upload("public/" + fileUUID, file, {
+      .upload(user?.id + "/" + fileUUID, file, {
         cacheControl: "3600",
         upsert: false,
       });
@@ -114,38 +112,29 @@ export const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
       throw error;
     }
     return data.path;
-  }
+  };
 
-  const getAvatarUrl = async (fileUUID: string) => {
+  const getAvatarUrl = async () => {
     try {
-      const { data } = supabase.storage.from("avatars").getPublicUrl(fileUUID);
+      const { data } = supabase.storage.from("avatars").getPublicUrl("avatar");
 
-      return data.publicUrl;
+      // https://bgowchkinduwslvjovwg.supabase.co/storage/v1/object/public/avatars/avatar è un esempio di url tra
+      // avatars/ e avatar c'è user?.id inseriscilo
+
+      if (!data) {
+        return "";
+      }
+
+      const url =
+        data.publicUrl.split("/").slice(0, -1).join("/") +
+        "/" +
+        user?.id +
+        "/avatar";
+
+      return url;
     } catch (error) {
       throw error;
     }
-  };
-
-  /**
-   * Downloads the avatar file with the specified UUID from Supabase storage.
-   * @param fileUUID The UUID of the avatar file to download.
-   * @returns The downloaded avatar file data.
-   * @throws If an error occurs during the download process.
-   */
-  const downloadAvatar = async (fileUUID: string) => {
-    const publicUrl = await getAvatarUrl(fileUUID);
-
-    console.log("publicUrl", publicUrl);
-
-    const { data, error } = await supabase.storage
-      .from("avatars")
-      .download(publicUrl);
-
-    if (error) {
-      throw error;
-    }
-
-    return data;
   };
 
   useEffect(() => {
@@ -192,9 +181,9 @@ export const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
         signInWithPassword,
         signOut,
         uploadAvatar,
-				downloadAvatar,
+
         getAvatarUrl,
-        uploadPostImage
+        uploadPostImage,
       }}
     >
       {children}

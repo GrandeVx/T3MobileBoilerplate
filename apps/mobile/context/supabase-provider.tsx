@@ -17,6 +17,7 @@ type SupabaseContextProps = {
   uploadAvatar: (file: string) => Promise<string>;
   getAvatarUrl: () => Promise<string>;
   uploadPostImage: (file: File, fileUUID: string) => Promise<string>;
+  getPostImageUrl: (fileUUID: string) => Promise<string>;
 };
 
 type SupabaseProviderProps = {
@@ -33,6 +34,7 @@ export const SupabaseContext = createContext<SupabaseContextProps>({
   uploadAvatar: async () => "",
   getAvatarUrl: async () => "",
   uploadPostImage: async () => "",
+  getPostImageUrl: async () => "",
 });
 
 export const useSupabase = () => useContext(SupabaseContext);
@@ -114,27 +116,44 @@ export const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
     return data.path;
   };
 
-  const getAvatarUrl = async () => {
-    try {
-      const { data } = supabase.storage.from("avatars").getPublicUrl("avatar");
+  const getPostImageUrl = async (fileUUID: string) => {
+    const { data } = await supabase.storage
+      .from("posts")
+      .getPublicUrl(user?.id + "/" + fileUUID);
 
-      // https://bgowchkinduwslvjovwg.supabase.co/storage/v1/object/public/avatars/avatar è un esempio di url tra
-      // avatars/ e avatar c'è user?.id inseriscilo
-
-      if (!data) {
-        return "";
-      }
-
-      const url =
-        data.publicUrl.split("/").slice(0, -1).join("/") +
-        "/" +
-        user?.id +
-        "/avatar";
-
-      return url;
-    } catch (error) {
-      throw error;
+    if (!data) {
+      return "";
     }
+
+    const url =
+      data.publicUrl.split("/").slice(0, -1).join("/") +
+      "/" +
+      user?.id +
+      "/" +
+      fileUUID;
+    return url;
+  };
+
+  /**
+   * Retrieves the URL of the user's avatar from the Supabase storage.
+   * @returns The URL of the user's avatar, or an empty string if the avatar is not found.
+   */
+  const getAvatarUrl = async () => {
+    const { data } = await supabase.storage
+      .from("avatars")
+      .getPublicUrl("avatar");
+
+    if (!data) {
+      return "";
+    }
+
+    const url =
+      data.publicUrl.split("/").slice(0, -1).join("/") +
+      "/" +
+      user?.id +
+      "/avatar";
+
+    return url;
   };
 
   useEffect(() => {
@@ -181,9 +200,9 @@ export const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
         signInWithPassword,
         signOut,
         uploadAvatar,
-
         getAvatarUrl,
         uploadPostImage,
+        getPostImageUrl,
       }}
     >
       {children}

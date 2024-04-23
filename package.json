@@ -16,6 +16,8 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "@typescript-eslint/parser": "^7.3.1",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.1",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.12",

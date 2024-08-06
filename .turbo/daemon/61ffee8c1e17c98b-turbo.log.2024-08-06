@@ -223,3 +223,12 @@
 2024-08-06T09:34:48.258350Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/_components")}
 2024-08-06T09:34:48.258360Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
 2024-08-06T09:34:48.281624Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-08-06T09:39:53.462404Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/(marketing)/page.tsx")}
+2024-08-06T09:39:53.462415Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-08-06T09:39:56.162894Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/(marketing)/page.tsx")}
+2024-08-06T09:39:56.162905Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-08-06T09:39:56.162925Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-08-06T09:39:56.661892Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/(marketing)/page.tsx")}
+2024-08-06T09:39:56.661903Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-08-06T09:39:58.562906Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/(marketing)/page.tsx")}
+2024-08-06T09:39:58.562917Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))

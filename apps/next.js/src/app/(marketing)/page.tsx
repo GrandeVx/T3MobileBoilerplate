@@ -1,14 +1,9 @@
 "use client";
 
-import { api } from "@/trpc/react";
-
 import Balancer from "react-wrap-balancer";
 import { Animated_h1, Animated_p } from "@/lib/animated";
 
 export default function Home() {
-  const { data, isLoading } = api.post.hello.useQuery({
-    text: "Hello World",
-  });
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-center bg-slate-100 pt-48">
       <div className="z-10 min-h-[50vh] w-full max-w-4xl px-5 xl:px-0">
@@ -36,7 +31,6 @@ export default function Home() {
             same thing over and over again (and every time something decide to
             don't work...). I promise to keep this updated and to add new stuff
           </Balancer>
-          {isLoading ? "Loading..." : data?.greeting}
         </Animated_p>
       </div>
     </main>

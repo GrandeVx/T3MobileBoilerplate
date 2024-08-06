@@ -232,3 +232,9 @@
 2024-08-06T09:39:56.661903Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
 2024-08-06T09:39:58.562906Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/(marketing)/page.tsx")}
 2024-08-06T09:39:58.562917Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-08-06T09:49:02.269388Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/login/page.tsx")}
+2024-08-06T09:49:02.269398Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-08-06T09:49:20.569267Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/auth/reset-password/page.tsx")}
+2024-08-06T09:49:20.569334Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-08-06T09:49:26.670532Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/login/page.tsx")}
+2024-08-06T09:49:26.670556Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))

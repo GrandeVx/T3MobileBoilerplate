@@ -19,14 +19,12 @@ export default function Login() {
   const { toast } = useToast();
 
   const handleSignIn = async () => {
-    console.log(password);
     await supabase.auth
       .signInWithPassword({
         email,
         password,
       })
       .then(async (data) => {
-        console.log(data);
         if (!data.data.session) {
           toast({
             variant: "destructive",

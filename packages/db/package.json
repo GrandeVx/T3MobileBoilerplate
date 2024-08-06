@@ -1,5 +1,5 @@
 {
-  "name": "@wardrobe/db",
+  "name": "@boilerplate/db",
   "version": "0.1.0",
   "module": "index.ts",
   "main": "./index.ts",
@@ -10,18 +10,21 @@
     "@types/bun": "latest"
   },
   "scripts": {
-    "with-env": "dotenv -e ../../.env --",
+    "with-env": "dotenv -e ../../apps/next.js/.env --",
     "postinstall": "pnpm prisma generate",
     "dev": "tsc --watch",
     "db-push": "pnpm with-env prisma db push",
+    "studio": "pnpm with-env prisma studio",
     "db-generate": "pnpm with-env prisma generate"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@mermaid-js/mermaid-cli": "^10.9.0",
     "@prisma/client": "^5.11.0",
     "prisma": "^5.1.1",
+    "prisma-erd-generator": "^1.11.2",
     "zod": "^3.22.4",
     "zod-prisma": "^0.5.4"
   }

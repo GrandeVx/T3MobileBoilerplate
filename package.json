@@ -1,5 +1,5 @@
 {
-  "name": "wardrobe",
+  "name": "ecoffice",
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
@@ -11,17 +11,18 @@
   "scripts": {
     "dev:next": "",
     "clear": "rimraf ./**/**/node_modules/ && rm -rf ./node_modules/",
-    "dev": "turbo dev --parallel"
+    "dev": "dotenv -e ./apps/mobile/.env -- turbo dev --parallel",
+    "db-push": "cd ./packages/db && pnpm run db-push"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.3.1",
-    "@typescript-eslint/parser": "^7.3.1",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
     "dotenv": "^16.4.5",
-    "dotenv-cli": "^7.4.1",
+    "dotenv-cli": "^7.4.2",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
-    "prettier-plugin-tailwindcss": "^0.5.12",
-    "rimraf": "^5.0.5",
-    "turbo": "^1.13.0"
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "rimraf": "^5.0.7",
+    "turbo": "^1.13.3"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@wardrobe/tailwind-config",
+  "name": "@boilerplate/tailwind-config",
   "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "dev": "tsc --watch"
-  } ,
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.19",

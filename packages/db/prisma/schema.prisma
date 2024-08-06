@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 generator zod {
@@ -16,40 +16,20 @@ generator zod {
 }
 
 datasource db {
-  provider     = "postgresql"
-  url          = env("DATABASE_URL")
-}
-
-model Post {
-    id        Int      @id @default(autoincrement())
-    
-    name      String
-    user_id String
-    email     String
-
-    User user @relation(fields: [user_id], references: [id])
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-    @@index([name, user_id])
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model user {
-  id        String @id @unique
-  email     String @unique
-  stripeCustomerId String? @unique
-  firstName String
-  lastName  String
-  profileImageUrl String?
+  id    String  @id @unique @default(uuid())
+  email String  @unique
+  phone String? @unique
 
-  Posts Post[]
-  
-  isPremium Boolean @default(false)
-  PremiumUntil DateTime?
+  firstName String?
+  lastName  String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([id])
 }
-
-

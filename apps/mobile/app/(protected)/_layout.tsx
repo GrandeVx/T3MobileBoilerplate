@@ -1,45 +1,44 @@
-import { Tabs } from "expo-router";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import React from "react";
+import { Stack } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useEffect } from "react";
+import { router, usePathname } from "expo-router";
 
-import { theme } from "@/lib/constants";
-import { useColorScheme } from "@/lib/useColorScheme";
+export {
+  // Catch any errors thrown by the Layout component.
+  ErrorBoundary,
+} from "expo-router";
 
-export default function ProtectedLayout() {
-  const { colorScheme } = useColorScheme();
+export default function RootLayout() {
+  const currentRoute = usePathname();
+  /**
+   * Checks if onboarding has been completed.
+   * If not, redirects to the onboarding screen.
+   */
+  const OnboardingCheck = async () => {
+    const onboarding = await AsyncStorage.getItem("@OnboardingIsDone");
+
+    console.log(currentRoute);
+    if (
+      (!onboarding || onboarding === "false") &&
+      !currentRoute.includes("onboarding")
+    ) {
+      router.replace("/(protected)/(onboarding)/onboarding");
+    }
+  };
+
+  useEffect(() => {
+    OnboardingCheck();
+  }, []);
 
   return (
-    <Tabs
+    <Stack
       screenOptions={{
         headerShown: false,
-        tabBarStyle: {
-          backgroundColor:
-            colorScheme === "dark"
-              ? theme.dark.background
-              : theme.light.background,
-        },
-				tabBarActiveTintColor: "white",
-        tabBarShowLabel: true,
       }}
+      initialRouteName="(tabs)"
     >
-      <Tabs.Screen
-        name="(home)"
-        options={{
-					title: "Home",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="home" color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="settings"
-        options={{
-					title: "Settings",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="gear" color={color} />
-          ),
-        }}
-      />
-    </Tabs>
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="(onboarding)/onboarding" />
+    </Stack>
   );
 }

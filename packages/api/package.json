@@ -1,5 +1,5 @@
 {
-  "name": "@wardrobe/api",
+  "name": "@boilerplate/api",
   "version": "0.1.0",
   "main": "index.ts",
   "module": "index.ts",
@@ -23,7 +23,7 @@
     "@trpc/server": "^10.45.2",
     "@types/node": "^18.16.0",
     "@types/react": "^18.2.33",
-    "@wardrobe/db": "*",
+    "@boilerplate/db": "*",
     "next": "^14.0.0",
     "next-server": "^9.0.5",
     "superjson": "^2.2.1",

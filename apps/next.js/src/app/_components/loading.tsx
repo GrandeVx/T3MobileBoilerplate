@@ -21,7 +21,7 @@ export default function LoadingComponent() {
             fill="currentFill"
           />
         </svg>
-        <span className="text-center font-semibold">Loading General</span>
+        <span className="text-center font-semibold">Loading...</span>
       </div>
     </div>
   );

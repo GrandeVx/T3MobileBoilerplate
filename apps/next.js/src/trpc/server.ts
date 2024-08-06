@@ -1,13 +1,9 @@
-import {
-  createTRPCProxyClient,
-  loggerLink,
-  unstable_httpBatchStreamLink,
-} from "@trpc/client";
+import { createTRPCProxyClient, loggerLink, httpBatchLink } from "@trpc/client";
 import { cookies } from "next/headers";
 
-import { type AppRouter } from "@wardrobe/api";
+import { type AppRouter } from "@boilerplate/api";
 import { getUrl } from "./shared";
-import { transformer } from "@wardrobe/api/trasformer";
+import { transformer } from "@boilerplate/api/trasformer";
 
 export const api = createTRPCProxyClient<AppRouter>({
   transformer,
@@ -17,9 +13,10 @@ export const api = createTRPCProxyClient<AppRouter>({
         process.env.NODE_ENV === "development" ||
         (op.direction === "down" && op.result instanceof Error),
     }),
-    unstable_httpBatchStreamLink({
+    httpBatchLink({
       url: getUrl(),
       headers() {
+        console.log("cookies ===", cookies().toString());
         return {
           cookie: cookies().toString(),
           "x-trpc-source": "rsc",

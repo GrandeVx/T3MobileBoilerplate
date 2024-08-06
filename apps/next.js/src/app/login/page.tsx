@@ -10,7 +10,6 @@ import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { api } from "@/trpc/react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -18,36 +17,26 @@ export default function Login() {
   const router = useRouter();
   const supabase = createClientComponentClient();
   const { toast } = useToast();
-  const CheckUser = api.user.checkifUserisAdmin.useMutation();
 
   const handleSignIn = async () => {
-    await CheckUser.mutateAsync({ email }).then(async (data) => {
-      if (!data) {
-        toast({
-          variant: "destructive",
-          title: "Login Fallito",
-          description: "Non sei autorizzato ad accedere o l'utente non esiste",
-        });
-        return;
-      } else {
-        await supabase.auth
-          .signInWithPassword({
-            email,
-            password,
-          })
-          .then(async (data) => {
-            if (!data.data.session) {
-              toast({
-                variant: "destructive",
-                title: "Login Fallito",
-                description: "Controlla le credenziali e riprova",
-              });
-            } else {
-              router.push("/dashboard/home");
-            }
+    console.log(password);
+    await supabase.auth
+      .signInWithPassword({
+        email,
+        password,
+      })
+      .then(async (data) => {
+        console.log(data);
+        if (!data.data.session) {
+          toast({
+            variant: "destructive",
+            title: "Login Fallito",
+            description: "Controlla le credenziali e riprova",
           });
-      }
-    });
+        } else {
+          router.push("/dashboard/home");
+        }
+      });
   };
 
   return (
@@ -91,7 +80,7 @@ export default function Login() {
           </div>
           <div className="flex items-center justify-between"></div>
           <Button
-            className="w-full rounded-xl bg-background"
+            className="w-full rounded-xl bg-foreground"
             onClick={handleSignIn}
           >
             Accedi

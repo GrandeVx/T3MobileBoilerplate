@@ -14,14 +14,6 @@ export async function middleware(req: NextRequest) {
 
   if (!data.session && !req.url.includes("auth")) {
     return NextResponse.rewrite(new URL("/login", req.url));
-  } else {
-    if (req.url.includes("auth")) {
-      NextResponse.next();
-    } else if (!req.url.includes("/dashboard")) {
-      // se l'url è uguale al dominio, reindirizza alla dashboard
-      return NextResponse.rewrite(new URL("/dashboard/home", req.url));
-    }
-    return NextResponse.next();
   }
 }
 export const config = {
@@ -32,8 +24,10 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      * - api/trpc (trpc API calls)
+
      * Feel free to modify this pattern to include more paths.
      */
     "/((?!_next/static|_next/image|favicon.ico|api/trpc|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    "/",
   ],
 };

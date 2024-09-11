@@ -34,7 +34,6 @@ export default function SignIn() {
 
   async function onSubmit(data: z.infer<typeof formSchema>) {
     try {
-      console.log(data);
       await signInWithPassword(data.email, data.password);
       form.reset();
     } catch (error: Error | unknown) {

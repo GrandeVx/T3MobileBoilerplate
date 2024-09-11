@@ -22,6 +22,8 @@ export default function Onboarding() {
   const router = useRouter();
   const utils = api.useUtils();
 
+  // Before the rendering you can use the "utils" to invalidate all the other queries for prioritizing the current one
+
   const { data: user, isLoading: userLoading } = api.user.getUser.useQuery({});
 
   const [name, setName] = useState(

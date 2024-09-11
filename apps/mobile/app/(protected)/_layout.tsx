@@ -17,7 +17,6 @@ export default function RootLayout() {
   const OnboardingCheck = async () => {
     const onboarding = await AsyncStorage.getItem("@OnboardingIsDone");
 
-    console.log(currentRoute);
     if (
       (!onboarding || onboarding === "false") &&
       !currentRoute.includes("onboarding")

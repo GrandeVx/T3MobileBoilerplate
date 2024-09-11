@@ -1,13 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
-
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
-import { useRouter } from "next/router";
-import React from "react";
+import { useRouter } from "next/navigation";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
 // We need to use the service role key to have the admin role for the supabase client
@@ -106,33 +105,48 @@ export default function ResetPasswordPage() {
         onSubmit={handleSubmit}
         className="w-full max-w-md space-y-8 rounded-lg bg-white p-8 shadow-lg"
       >
-        <div className="flex justify-center"></div>
+        <div className="flex justify-center">
+          <Image
+            src="/icon/ecoffice-big.png"
+            alt="Ecoffice Logo"
+            width={250}
+            height={250}
+          />
+        </div>
         <h2 className="mt-6 text-center text-lg font-normal text-gray-900">
           Cambia la tua password
         </h2>
         <div className="space-y-4">
-          <div>
-            <Label htmlFor="email">Nuova Password</Label>
-            <Input
-              id="password"
-              type="password"
-              name="password"
-              placeholder="Nuova password"
-              className="bg-white"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
+          {accessToken && refreshToken ? (
+            <>
+              <div>
+                <Label htmlFor="email">Nuova Password</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  name="password"
+                  placeholder="Nuova password"
+                  className="bg-white"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
 
-          <div className="flex items-center justify-between"></div>
-          <Button
-            disabled={!passwordRegex.test(password)}
-            className="w-full rounded-xl bg-foreground disabled:bg-background "
-            type="submit"
-          >
-            Cambia la password
-          </Button>
+              <div className="flex items-center justify-between"></div>
+              <Button
+                disabled={!passwordRegex.test(password)}
+                className="w-full rounded-xl bg-foreground disabled:bg-background "
+                type="submit"
+              >
+                Cambia la password
+              </Button>
+            </>
+          ) : (
+            <div className="flex items-center justify-center">
+              <p>Access token e refresh token non Validi</p>
+            </div>
+          )}
         </div>
       </form>
     </div>

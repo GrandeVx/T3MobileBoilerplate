@@ -98,6 +98,7 @@ const getJWT = (ctx: Context, projectName: string) => {
 
   if (!ctx.headers.get("authorization")) {
     const cookieHeader = ctx.headers.get("cookie") || "";
+
     // Parse the cookie header into an object
     const cookieList = Object.fromEntries(
       cookieHeader.split("; ").map((cookie) => {
@@ -105,8 +106,13 @@ const getJWT = (ctx: Context, projectName: string) => {
         return [name, decodeURIComponent(value || "")];
       })
     );
-    const supabaseAuthToken =
+
+    let supabaseAuthToken =
       cookieList && cookieList[`sb-${projectName}-auth-token`]?.split('"')[1];
+
+    if (!supabaseAuthToken) {
+      supabaseAuthToken = cookieList && cookieList[`sb-tmp-auth-token`];
+    }
 
     return supabaseAuthToken;
   } else {
@@ -120,7 +126,6 @@ const isAuthed = t.middleware(async ({ ctx, next }) => {
 
   const { data } = await supabase.auth.getUser(token);
 
-  // console.log(data);
   if (!data.user) {
     throw new Error("Not authorized | User not found");
   }

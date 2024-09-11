@@ -14,6 +14,11 @@ export async function middleware(req: NextRequest) {
 
   if (!data.session && !req.url.includes("auth")) {
     return NextResponse.rewrite(new URL("/login", req.url));
+  } else {
+    // Allow requests to the auth endpoint
+    if (req.url.includes("auth")) {
+      NextResponse.next();
+    }
   }
 }
 export const config = {
@@ -28,6 +33,5 @@ export const config = {
      * Feel free to modify this pattern to include more paths.
      */
     "/((?!_next/static|_next/image|favicon.ico|api/trpc|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
-    "/",
   ],
 };

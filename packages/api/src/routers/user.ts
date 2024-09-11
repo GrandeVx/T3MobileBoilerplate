@@ -20,6 +20,14 @@ export const userRouter = createTRPCRouter({
     });
   }),
 
+  deleteUserAccount: protectedProcedure.mutation(({ ctx }) => {
+    return ctx.db.user.delete({
+      where: {
+        email: ctx.session.user.email,
+      },
+    });
+  }),
+
   UpdateUser: protectedProcedure
     .input(
       z.object({

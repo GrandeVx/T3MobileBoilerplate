@@ -1,0 +1,92 @@
+2024-09-11T10:11:37.491887Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/.turbo-cookie"), AnchoredSystemPathBuf(".turbo/cookies/1.cookie")}
+2024-09-11T10:11:37.491943Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2024-09-11T10:11:40.391706Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/expo-env.d.ts")}
+2024-09-11T10:11:40.391715Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:11:40.492842Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/expo-env.d.ts")}
+2024-09-11T10:11:40.492852Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:11:40.492902Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-09-11T10:11:40.592265Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/.expo/types/router.d.ts")}
+2024-09-11T10:11:40.592275Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:11:40.592321Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-09-11T10:12:32.992350Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/2.cookie")}
+2024-09-11T10:12:32.993275Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2024-09-11T10:12:35.494670Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/expo-env.d.ts")}
+2024-09-11T10:12:35.494687Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:12:35.494731Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-09-11T10:12:35.691952Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/.expo/types/router.d.ts")}
+2024-09-11T10:12:35.691962Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:12:35.710881Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-09-11T10:13:54.092588Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/app/(protected)/(tabs)/(profile)/profile-home.tsx")}
+2024-09-11T10:13:54.092624Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:13:58.992110Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/app/(protected)/(tabs)/(profile)/profile-home.tsx")}
+2024-09-11T10:13:58.992121Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:14:00.401425Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/app/(protected)/(tabs)/(profile)/profile-home.tsx")}
+2024-09-11T10:14:00.401444Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:14:01.191721Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/app/(protected)/(tabs)/(profile)/profile-home.tsx")}
+2024-09-11T10:14:01.191731Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:14:35.993704Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/app/(protected)/(tabs)/(profile)/profile-home.tsx")}
+2024-09-11T10:14:35.993730Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:14:44.892069Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/app/(protected)/(tabs)/(profile)/profile-home.tsx")}
+2024-09-11T10:14:44.892087Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:14:50.392575Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/app/(protected)/(tabs)/(profile)/profile-home.tsx")}
+2024-09-11T10:14:50.392596Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:14:51.391954Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/app/(protected)/(tabs)/(profile)/profile-home.tsx")}
+2024-09-11T10:14:51.391964Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:16:18.492459Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/app/(protected)/_layout.tsx")}
+2024-09-11T10:16:18.492481Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:16:18.492530Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-09-11T10:16:44.893276Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/app/(protected)/_layout.tsx")}
+2024-09-11T10:16:44.893295Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:21:36.992916Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/api/src/trpc.ts")}
+2024-09-11T10:21:36.992937Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/api"), path: AnchoredSystemPathBuf("packages/api") }}))
+2024-09-11T10:33:10.188919Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("eas.json")}
+2024-09-11T10:33:10.188937Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2024-09-11T10:33:12.489924Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("eas.json")}
+2024-09-11T10:33:12.489951Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2024-09-11T10:35:19.489574Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/db/prisma/schema.prisma")}
+2024-09-11T10:35:19.489598Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/db"), path: AnchoredSystemPathBuf("packages/db") }}))
+2024-09-11T10:36:43.990954Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/middleware.ts")}
+2024-09-11T10:36:43.991014Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-09-11T10:37:36.191128Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/middleware.ts")}
+2024-09-11T10:37:36.191137Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-09-11T10:37:45.704945Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/middleware.ts")}
+2024-09-11T10:37:45.704965Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-09-11T10:37:45.725545Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-09-11T10:37:56.111287Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/middleware.ts")}
+2024-09-11T10:37:56.111306Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-09-11T10:43:50.219841Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/.env.example")}
+2024-09-11T10:43:50.219908Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-09-11T10:43:50.284739Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-09-11T10:43:58.120862Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/api/src/routers/user.ts")}
+2024-09-11T10:43:58.120890Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/api"), path: AnchoredSystemPathBuf("packages/api") }}))
+2024-09-11T10:44:26.020673Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/auth")}
+2024-09-11T10:44:26.020722Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-09-11T10:44:29.520848Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/auth/callback/route.ts"), AnchoredSystemPathBuf("apps/next.js/src/app/auth/delete-my-account/page.tsx"), AnchoredSystemPathBuf("apps/next.js/src/app/auth/login"), AnchoredSystemPathBuf("apps/next.js/src/app/auth/login/route.ts"), AnchoredSystemPathBuf("apps/next.js/src/app/auth/reset-password"), AnchoredSystemPathBuf("apps/next.js/src/app/auth/reset-password/page.tsx"), AnchoredSystemPathBuf("apps/next.js/src/app/auth"), AnchoredSystemPathBuf("apps/next.js/src/app/auth/delete-my-account"), AnchoredSystemPathBuf("apps/next.js/src/app/auth/callback")}
+2024-09-11T10:44:29.520861Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-09-11T10:45:14.021379Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/api/src/routers/user.ts")}
+2024-09-11T10:45:14.021399Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/api"), path: AnchoredSystemPathBuf("packages/api") }}))
+2024-09-11T10:45:15.721247Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/auth/delete-my-account/page.tsx")}
+2024-09-11T10:45:15.721256Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-09-11T10:45:15.725700Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-09-11T10:45:18.821640Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/auth/reset-password/page.tsx")}
+2024-09-11T10:45:18.821664Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-09-11T10:45:18.855336Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-09-11T10:45:19.022059Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/auth/reset-password/page.tsx")}
+2024-09-11T10:45:19.022076Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-09-11T10:45:19.022142Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-09-11T10:45:19.121457Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/next.js/src/app/auth/reset-password/page.tsx")}
+2024-09-11T10:45:19.121484Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/nextjs"), path: AnchoredSystemPathBuf("apps/next.js") }}))
+2024-09-11T10:45:19.121525Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-09-11T10:46:01.020789Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/api/src/routers/user.ts")}
+2024-09-11T10:46:01.020798Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/api"), path: AnchoredSystemPathBuf("packages/api") }}))
+2024-09-11T10:46:01.030491Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-09-11T10:46:18.021497Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/mobile/app/(public)/sign-in.tsx")}
+2024-09-11T10:46:18.021516Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/mobile"), path: AnchoredSystemPathBuf("apps/mobile") }}))
+2024-09-11T10:46:36.521467Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/api/src/trpc.ts")}
+2024-09-11T10:46:36.521494Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/api"), path: AnchoredSystemPathBuf("packages/api") }}))
+2024-09-11T10:46:38.120959Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/api/src/trpc.ts")}
+2024-09-11T10:46:38.120971Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/api"), path: AnchoredSystemPathBuf("packages/api") }}))
+2024-09-11T10:46:38.128444Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-09-11T10:46:38.221307Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/api/src/trpc.ts")}
+2024-09-11T10:46:38.221317Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@boilerplate/api"), path: AnchoredSystemPathBuf("packages/api") }}))
+2024-09-11T10:46:38.221326Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun

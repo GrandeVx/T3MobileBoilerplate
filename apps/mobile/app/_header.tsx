@@ -3,14 +3,16 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useRoute } from "@react-navigation/native";
 import { canGoBack, getTitle } from "@/lib/utils";
 import React, { ReactNode } from "react";
-import { Pressable, Text, View } from "react-native";
-import { Router } from "expo-router";
+import { Platform, Pressable, Text, View } from "react-native";
+import { Href, Router } from "expo-router";
 import { Dimensions } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 interface ContainerWithChildrenProps {
   children: ReactNode;
   router?: Router;
   modal?: boolean;
+  backRoute?: Href<string | object>;
   rightComponent?: ReactNode;
 }
 
@@ -18,70 +20,71 @@ const HeaderContainer: React.FC<ContainerWithChildrenProps> = ({
   children,
   router,
   modal = false,
+  backRoute,
   rightComponent,
 }) => {
   const route = useRoute();
   const insets = useSafeAreaInsets();
   const windowHeight = Dimensions.get("window").height;
 
+  const headerHeight = Math.max(insets.top + 44, 0.13 * windowHeight);
+
   return (
     <View style={{ flex: 1 }} className="bg-background">
       <View
-        className="border-b-[1px] border-gray-500"
         style={{
-          position: "relative",
+          height: headerHeight,
           paddingTop: insets.top,
-          // for the height check if insets.top is bigger than 13% of the screen if so use insets.top else use 13%
-          height:
-            insets.top > 0.13 * windowHeight ? insets.top : 0.13 * windowHeight,
+          flexDirection: "row",
           alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
         }}
       >
         <Text
           className="text-black"
           style={{
-            position: "absolute",
-            top: insets.top,
-            fontSize: 22,
+            fontSize: 24,
             fontWeight: "600",
-            zIndex: 1,
           }}
         >
-          {getTitle({
-            name: route.name,
-          })}
+          {getTitle({ name: route.name })}
         </Text>
+
         {canGoBack(route.name) && !modal && router && (
-          <View
+          <Pressable
             style={{
               position: "absolute",
-              top: insets.top,
               left: 20,
-              zIndex: 1,
+              top: (headerHeight - insets.top - 40) / 2 + insets.top,
+            }}
+            className="rounded-full bg-white p-3 px-5"
+            onPress={() => {
+              backRoute ? router.navigate(backRoute) : router.back();
             }}
           >
-            <Pressable
-              className=" rounded-full p-3"
-              onPress={() => router.back()}
-            >
-              <FontAwesome name="angle-left" size={24} color="black" />
-            </Pressable>
-          </View>
+            <FontAwesome
+              name="angle-left"
+              size={24}
+              color={"hsl(25 33% 33%)"}
+            />
+          </Pressable>
         )}
 
         {rightComponent && (
           <View
             style={{
               position: "absolute",
-              top: insets.top,
               right: 20,
-              zIndex: 1,
+              top: (headerHeight - insets.top - 40) / 2 + insets.top,
             }}
+            className="rounded-full bg-white p-3 px-3"
           >
             {rightComponent}
           </View>
         )}
       </View>
+      <StatusBar style={Platform.OS === "ios" ? "auto" : "auto"} />
       {children}
     </View>
   );

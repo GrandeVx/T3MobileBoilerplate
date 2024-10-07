@@ -8,6 +8,7 @@ A modern fullstack boilerplate combining Next.js, Expo, Supabase, and tRPC.
 - Expo/React Native mobile app
 - Supabase authentication
 - Typesafe API with tRPC
+- Prisma ORM
 - State management with React Query
 - Styling with Tailwind CSS
 - Customizable UI components

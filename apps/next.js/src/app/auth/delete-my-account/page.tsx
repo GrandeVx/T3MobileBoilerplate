@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
-import Image from "next/image";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -77,14 +77,6 @@ export default function ResetPasswordPage() {
         onSubmit={handleSubmit}
         className="w-full max-w-md space-y-8 rounded-lg bg-white p-8 shadow-lg"
       >
-        <div className="flex justify-center">
-          <Image
-            src="/icon/ecoffice-big.png"
-            alt="Ecoffice Logo"
-            width={250}
-            height={250}
-          />
-        </div>
         <h2 className="mt-6 text-center text-lg font-normal text-gray-900">
           Rimuovi il tuo Account
         </h2>
